@@ -1,0 +1,24 @@
+experiment:
+  name: "h2d_gat_smoke_test"
+  epochs: 2
+  batch_size: 1000
+  
+model:
+  num_layers: 2
+  hidden_dim: 64
+  num_heads: 4
+  keep_rate_init: 0.3
+  window_size: 8
+  rank: 4
+  group_size: 4
+
+dataset:
+  name: "Cora"
+  train_ratio: 0.1
+  val_ratio: 0.1
+  test_ratio: 0.1
+
+training:
+  lr: 0.01
+  weight_decay: 5e-4
+  patience: 5
