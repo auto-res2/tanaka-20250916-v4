@@ -1,0 +1,43 @@
+warning: No `requires-python` value found in the workspace. Defaulting to `>=3.11`.
+  0%|          | 0/400 [00:00<?, ?it/s]  0%|          | 0/400 [00:00<?, ?it/s]
+Traceback (most recent call last):
+  File "<frozen runpy>", line 198, in _run_module_as_main
+  File "<frozen runpy>", line 88, in _run_code
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/main.py", line 86, in <module>
+    main()
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/main.py", line 83, in main
+    run_experiment(config, 'full_experiment')
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/main.py", line 40, in run_experiment
+    model, training_results = trainer.train(data)
+                              ^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/train.py", line 277, in train
+    out = model(data.x.to(self.device), data.edge_index.to(self.device))
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/train.py", line 236, in forward
+    x = conv(x, edge_index, layer_idx=i, training=training)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1773, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/.venv/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1784, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/train.py", line 183, in forward
+    out = self.propagate(edge_index, x=(x_l, x_r), alpha=(alpha_l, alpha_r),
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/.venv/lib/python3.11/site-packages/torch_geometric/nn/conv/message_passing.py", line 523, in propagate
+    out = self.message(**msg_kwargs)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/train.py", line 200, in message
+    mask = self.dpp_sampler.sample_groups(
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/toma/pt-80-1-a-13/_work/tanaka-20250916-v4/tanaka-20250916-v4/src/train.py", line 71, in sample_groups
+    padded_kernel = torch.eye(n_scores, device=similarity_kernel.device)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+torch.OutOfMemoryError: CUDA out of memory. Tried to allocate 4942.74 GiB. GPU 0 has a total capacity of 79.15 GiB of which 67.49 GiB is free. Including non-PyTorch memory, this process has 11.65 GiB memory in use. Of the allocated memory 10.53 GiB is allocated by PyTorch, and 647.27 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)
