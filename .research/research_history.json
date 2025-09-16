@@ -3,5 +3,19 @@
   "queries": [
     "Efficient GAT training",
     "graph attention network speedup"
+  ],
+  "research_study_list": [
+    {
+      "title": "Bandit Samplers for Training Graph Neural Networks"
+    },
+    {
+      "title": "Are GATs Out of Balance?"
+    },
+    {
+      "title": "Bandit Samplers for Training Graph Neural Networks"
+    },
+    {
+      "title": "RSC: Accelerate Graph Neural Networks Training via Randomized Sparse Computations"
+    }
   ]
 }
