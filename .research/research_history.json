@@ -133,7 +133,104 @@
         "ogbn-papers100M",
         "TWITTER-CUT",
         "Cora-Full"
-      ]
+      ],
+      "external_resources": {
+        "hugging_face": {
+          "models": [
+            {
+              "id": "Edens-Gate/madness-12b-dare-ties",
+              "author": "Edens-Gate",
+              "sha": "8a457cdd8f50d754b064edfdfb39e65d50aa34af",
+              "created_at": "2025-01-01T07:34:00+00:00",
+              "last_modified": "2025-01-01T07:39:40+00:00",
+              "private": false,
+              "gated": false,
+              "disabled": false,
+              "downloads": 3,
+              "likes": 0,
+              "siblings": [
+                {
+                  "rfilename": ".gitattributes"
+                },
+                {
+                  "rfilename": "README.md"
+                },
+                {
+                  "rfilename": "config.json"
+                },
+                {
+                  "rfilename": "mergekit_config.yml"
+                },
+                {
+                  "rfilename": "model-00001-of-00005.safetensors"
+                },
+                {
+                  "rfilename": "model-00002-of-00005.safetensors"
+                },
+                {
+                  "rfilename": "model-00003-of-00005.safetensors"
+                },
+                {
+                  "rfilename": "model-00004-of-00005.safetensors"
+                },
+                {
+                  "rfilename": "model-00005-of-00005.safetensors"
+                },
+                {
+                  "rfilename": "model.safetensors.index.json"
+                }
+              ],
+              "card_data": {
+                "language": [],
+                "library_name": "transformers",
+                "tags": [
+                  "mergekit",
+                  "merge"
+                ],
+                "datasets": [],
+                "base_model": [
+                  "nbeerbower/mistral-nemo-gutenberg-12B-v4",
+                  "anthracite-org/magnum-v2.5-12b-kto",
+                  "NewEden/nemo-erebus",
+                  "TheDrummer/UnslopNemo-12B-v4.1"
+                ],
+                "task_categories": [],
+                "size_categories": [],
+                "metrics": [],
+                "widget": []
+              },
+              "tags": [
+                "transformers",
+                "safetensors",
+                "mistral",
+                "text-generation",
+                "mergekit",
+                "merge",
+                "conversational",
+                "arxiv:2311.03099",
+                "arxiv:2306.01708",
+                "base_model:Edens-Gate/madness-erebus",
+                "base_model:merge:Edens-Gate/madness-erebus",
+                "base_model:TheDrummer/UnslopNemo-12B-v4.1",
+                "base_model:merge:TheDrummer/UnslopNemo-12B-v4.1",
+                "base_model:anthracite-org/magnum-v2.5-12b-kto",
+                "base_model:merge:anthracite-org/magnum-v2.5-12b-kto",
+                "base_model:nbeerbower/mistral-nemo-gutenberg-12B-v4",
+                "base_model:merge:nbeerbower/mistral-nemo-gutenberg-12B-v4",
+                "autotrain_compatible",
+                "text-generation-inference",
+                "endpoints_compatible",
+                "region:us"
+              ],
+              "pipeline_tag": "text-generation",
+              "library_name": "transformers",
+              "readme": "---\nbase_model:\n- nbeerbower/mistral-nemo-gutenberg-12B-v4\n- anthracite-org/magnum-v2.5-12b-kto\n- NewEden/nemo-erebus\n- TheDrummer/UnslopNemo-12B-v4.1\nlibrary_name: transformers\ntags:\n- mergekit\n- merge\n\n---\n# merge\n\nThis is a merge of pre-trained language models created using [mergekit](https://github.com/cg123/mergekit).\n\n## Merge Details\n### Merge Method\n\nThis model was merged using the [DARE](https://arxiv.org/abs/2311.03099) [TIES](https://arxiv.org/abs/2306.01708) merge method using [NewEden/nemo-erebus](https://huggingface.co/NewEden/nemo-erebus) as a base.\n\n### Models Merged\n\nThe following models were included in the merge:\n* [nbeerbower/mistral-nemo-gutenberg-12B-v4](https://huggingface.co/nbeerbower/mistral-nemo-gutenberg-12B-v4)\n* [anthracite-org/magnum-v2.5-12b-kto](https://huggingface.co/anthracite-org/magnum-v2.5-12b-kto)\n* [TheDrummer/UnslopNemo-12B-v4.1](https://huggingface.co/TheDrummer/UnslopNemo-12B-v4.1)\n\n### Configuration\n\nThe following YAML configuration was used to produce this model:\n\n```yaml\nmodels:\n  - model: anthracite-org/magnum-v2.5-12b-kto\n    parameters:\n      weight: 0.3\n      density: 0.53\n  - model: nbeerbower/mistral-nemo-gutenberg-12B-v4\n    parameters:\n      weight: 0.2\n      density: 0.53\n  - model: TheDrummer/UnslopNemo-12B-v4.1\n    parameters:\n      weight: 0.5\n      density: 0.53\nbase_model: NewEden/nemo-erebus\nmerge_method: dare_ties\ndtype: bfloat16\n```\n",
+              "extracted_code": ""
+            }
+          ],
+          "datasets": []
+        }
+      }
     }
   },
   "idea_info_history": [
