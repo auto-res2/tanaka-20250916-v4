@@ -1,0 +1,57 @@
+{
+  "experiment_type": "smoke_test",
+  "config": {
+    "experiment": {
+      "name": "h2d_gat_smoke_test",
+      "epochs": 2,
+      "batch_size": 1000
+    },
+    "model": {
+      "num_layers": 2,
+      "hidden_dim": 64,
+      "num_heads": 4,
+      "keep_rate_init": 0.3,
+      "window_size": 8,
+      "rank": 4,
+      "group_size": 4
+    },
+    "dataset": {
+      "name": "Cora",
+      "train_ratio": 0.1,
+      "val_ratio": 0.1,
+      "test_ratio": 0.1
+    },
+    "training": {
+      "lr": 0.01,
+      "weight_decay": "5e-4",
+      "patience": 5
+    }
+  },
+  "training_results": {
+    "train_losses": [
+      1.9459102153778076,
+      1.9459102153778076
+    ]
+  },
+  "evaluation_results": {
+    "accuracy": {
+      "train": 0.1346153846153846,
+      "val": 0.08241758241758242,
+      "test": 0.12064343163538874
+    },
+    "f1_score": 0.03890799233608877,
+    "inference_time": 0.040389060974121094,
+    "memory_usage_gb": 0.09203624725341797,
+    "energy_estimate_joules": 10.097265243530273,
+    "gradient_variance": {
+      "mean_variance": 0.0,
+      "std_variance": 0.0
+    },
+    "sparsity_stats": {
+      "average_sparsity": 80.0,
+      "sparsity_std": 5.0,
+      "keep_rate": 0.3
+    },
+    "generalization_gap": 0.013971952979995872
+  }
+}
